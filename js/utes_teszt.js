@@ -44,6 +44,12 @@ export function tesztek() {
     "rossz inputot nem kezeli jól",
   );
 
+  poz1 = "";
+  console.assert(
+    utesEllenorzes(poz1, poz2) == undefined,
+    "rossz inputot nem kezeli jól",
+  );
+
   console.log("Minden teszt  lefutott");
 }
 
