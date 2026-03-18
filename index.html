@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Js sakkadat | Fru Huszár</title>
-    <link rel="stylesheet" href="./css/style.css?v=1" />
-    <script type="module" src="./js/index.js?v=1"></script>
+    <link rel="stylesheet" href="./css/style.css?v=4" />
+    <script type="module" src="./js/index.js?v=4"></script>
   </head>
   <body>
     <main>
@@ -24,26 +24,32 @@
           <tbody id="tbody"></tbody>
         </table>
       </article>
-      <section>
+      <section class="pozicio-section">
         <h2>Sakktábla pozíciók</h2>
-        <div>
-          <label for="pozicio1">1. pozíció:</label>
-          <input
-            type="text"
-            id="pozicio1"
-            name="pozicio1"
-            placeholder="pl. e4"
-          />
-        </div>
-        <div>
-          <label for="pozicio2">2. pozíció:</label>
-          <input
-            type="text"
-            id="pozicio2"
-            name="pozicio2"
-            placeholder="pl. d5"
-          />
-        </div>
+        <div class="melle">
+          <div>
+            <div class="input">
+              <label for="pozicio1">1. pozíció:</label>
+              <input
+                type="text"
+                id="pozicio1"
+                name="pozicio1"
+                placeholder="pl. e4"
+              />
+            </div>
+            <div class="input">
+              <label for="pozicio2">2. pozíció:</label>
+              <input
+                type="text"
+                id="pozicio2"
+                name="pozicio2"
+                placeholder="pl. d5"
+              />
+            </div>
+          </div>  
+          <button id="sakk">Sakk</button>
+        </div> 
+        <p class="ide">Sakk eredménye:</p>
       </section>
       <footer>
         <p>&copy; Huszár Fruzsina Anna</p>

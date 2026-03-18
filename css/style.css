@@ -1,3 +1,12 @@
+:root {
+  --szin-hatter: #313628;
+  --szin-betu: bisque;
+  --szin-kiemelt: black;
+  --szin-doboz: darkgrey;
+  --szin-border: black;
+  --radius: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,8 +14,95 @@
 body {
   display: flex;
   justify-content: center;
+  background-color: var(--szin-hatter);
+  color: var(--szin-betu);
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+section {
+  margin-top: 20px;
+  border: 2px solid var(--szin-border);
+}
+
+h1 {
+  text-align: center;
 }
 
 th {
   cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid var(--szin-border);
+  margin-top: 20px;
+  background-color: var(--szin-doboz);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+td, th {
+  padding: 4px;
+  text-align: center;
+  border: 1px solid var(--szin-border);
+}
+
+tr:nth-child(even) {
+  background-color: grey;
+}
+
+.melle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.pozicio-section {
+  background-color: var(--szin-doboz);
+  border-radius: var(--radius);
+  padding: 5px;
+}
+
+.pozicio-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.melle > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--szin-border);
+  outline: none;
+  max-width: 50vw;
+}
+
+.input input:focus {
+  border-color: var(--szin-kiemelt);
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--szin-kiemelt);
+  color: var(--szin-doboz);
+  cursor: pointer;
+}
+
+.ide {
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0.7;
 }
