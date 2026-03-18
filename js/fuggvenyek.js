@@ -76,29 +76,50 @@ export function rendezesEsemenyek(SAKKADAT, TABLAZAT) {
   });
 }
 
-export function sakkEsemenykezelo(){
+export function sakkEsemenykezelo() {
   const SAKK = document.getElementById("sakk");
-    
-  SAKK.addEventListener("click", function(){
+  SAKK.addEventListener("click", function () {
     let Ide = document.getElementsByClassName("ide")[0];
 
     let poz1 = document.getElementById("pozicio1").value;
     let poz2 = document.getElementById("pozicio2").value;
 
     if (poz1 === "" || poz2 === "") {
-        Ide.innerHTML = "Add meg mindkét pozíciót!";
-        return;
+      Ide.innerHTML = "Add meg mindkét pozíciót!";
+      return;
     }
-    
-    let sor = Number(poz1.slice(1)) - Number(poz2.slice(1));
-    let oszlop = poz1.slice(0,1).charCodeAt(0) - poz2.slice(0,1).charCodeAt(0);
 
-    let atlo = Math.abs(sor) == Math.abs(oszlop);
-
-    if (sor == 0 || oszlop == 0 || atlo){
-        Ide.innerHTML = "Ütik egymást!";
+    let ellenorizve = utesEllenorzes(poz1, poz2);
+    if (ellenorizve) {
+      Ide.innerHTML = "Ütik egymást!";
     } else {
-        Ide.innerHTML = "Nem ütik egymást...";
+      Ide.innerHTML = "Nem ütik egymást...";
     }
   });
+}
+
+export function utesEllenorzes(poz1, poz2) {
+  let sor = Number(poz1.slice(1)) - Number(poz2.slice(1));
+  let oszlop = poz1.charCodeAt(0) - poz2.charCodeAt(0);
+
+  if (
+    Number(poz1.slice(1)) > 8 ||
+    Number(poz1.slice(1)) < 1 ||
+    Number(poz2.slice(1)) > 8 ||
+    Number(poz2.slice(1)) < 1 ||
+    poz1.charCodeAt(0) < 97 ||
+    poz1.charCodeAt(0) > 104 ||
+    poz2.charCodeAt(0) < 97 ||
+    poz2.charCodeAt(0) > 104
+  ) {
+    return;
+  }
+
+  let atlo = Math.abs(sor) == Math.abs(oszlop);
+
+  if (sor == 0 || oszlop == 0 || atlo) {
+    return true;
+  } else {
+    return false;
+  }
 }

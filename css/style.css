@@ -1,8 +1,8 @@
 :root {
   --szin-hatter: #313628;
   --szin-betu: bisque;
-  --szin-kiemelt: black;
-  --szin-doboz: darkgrey;
+  --szin-kiemelt: beige;
+  --szin-doboz: #444141;
   --szin-border: black;
   --radius: 10px;
 }
@@ -42,7 +42,8 @@ table {
   overflow: hidden;
 }
 
-td, th {
+td,
+th {
   padding: 4px;
   text-align: center;
   border: 1px solid var(--szin-border);
@@ -55,7 +56,7 @@ tr:nth-child(even) {
 .melle {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 5px;
 }
